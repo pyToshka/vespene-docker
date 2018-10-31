@@ -1,0 +1,34 @@
+version: '3'
+services:
+  vespene:
+    build: docker
+    tty: true
+    restart: always
+    privileged: true
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_NAME=vespene
+      - DB_USER=vespene
+      - DB_PASS=vespene
+      - DB_HOST=postgresql
+    depends_on:
+      - "postgresql"
+    command: >
+        sh -c "
+         cd /opt/vespene &&
+          python manage.py migrate &&
+          python manage.py runserver 0.0.0.0:8080
+        "
+  postgresql:
+    restart: always
+    image: sameersbn/postgresql:10
+    ports:
+      - "5432:5432"
+    environment:
+      - DEBUG=false
+      - DB_USER=vespene
+      - DB_PASS=vespene
+      - DB_NAME=vespene
+    volumes:
+      - ./postgresql-data:/var/lib/postgresql

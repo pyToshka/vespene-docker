@@ -1,0 +1,1 @@
+BUILDROOT_WEB_LINK=os.environ.get('BUILDROOT_WEB_LINK','')

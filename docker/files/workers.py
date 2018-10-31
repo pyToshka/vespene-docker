@@ -1,0 +1,4 @@
+BUILD_ROOT=os.environ.get('BUILD_ROOT','')
+# FILESERVING_ENABLED = True
+# FILESERVING_PORT = 8000
+# FILESERVING_HOSTNAME = "this-server.example.com"
