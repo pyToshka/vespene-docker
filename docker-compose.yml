@@ -12,11 +12,13 @@ services:
       - DB_USER=vespene
       - DB_PASS=vespene
       - DB_HOST=postgresql
+      - WAIT_HOSTS=postgresql:5432
     depends_on:
       - "postgresql"
     command: >
         sh -c "
          cd /opt/vespene &&
+          /wait &&
           python manage.py migrate &&
           python manage.py runserver 0.0.0.0:8080
         "

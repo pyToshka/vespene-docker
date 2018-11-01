@@ -25,3 +25,5 @@ RUN apk add --virtual .build-deps gcc musl-dev postgresql-dev libffi  libffi-dev
     make secrets && \
     make  collectstatic && \
     apk --purge del .build-deps
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.4.0/wait /wait
+RUN chmod +x /wait

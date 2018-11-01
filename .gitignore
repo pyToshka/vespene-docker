@@ -147,4 +147,5 @@ packer_cache/
 # For built boxes
 *.box
 
-.idea/  
+.idea/
+postgresql-data/
