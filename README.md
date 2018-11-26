@@ -48,7 +48,7 @@ docker-compose run vespene python manage.py migrate
 ### How To create new superuser
 Run
 ```
-docker-compose run web python manage.py createsuperuser
+docker-compose run vespene python manage.py createsuperuser
 ```
 
 ### How To deploy tutorial
